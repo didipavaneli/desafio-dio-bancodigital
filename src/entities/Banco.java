@@ -1,25 +1,23 @@
 package entities;
 
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+@Getter
+@Setter
 public class Banco {
 
     private String nome;
     private List<Conta> contas;
 
-    public String getNome() {
-        return nome;
-    }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public List<Conta> getContas() {
+    public List<Conta> ImprimirContas() {
+        List<Conta> contas = new ArrayList<Conta>();
+        for (Conta conta : this.contas) {
+            contas.add(conta);
+        }
         return contas;
-    }
-
-    public void setContas(List<Conta> contas) {
-        this.contas = contas;
     }
 }
